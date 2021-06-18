@@ -1,29 +1,21 @@
 import PropTypes from 'prop-types';
 import NotFound from 'shared/NotFound';
-import Home from './pages/Home';
-import Steps from './pages/Steps';
-import ThankYouPage from './pages/ThankYouPage';
+import CarData from './CarData';
+import Plans from './Plans';
 
 const routes = [
   {
-    name: 'home',
-    path: '/',
-    exact: true,
-    component: Home,
-    isProtect: false,
-  },
-  {
-    name: 'paso',
+    name: 'datos-auto',
     path: '/paso/datos-auto',
     exact: true,
-    component: Steps,
+    component: CarData,
     isProtect: false,
   },
   {
-    name: 'thank-you-page',
-    path: '/gracias',
+    name: 'planes',
+    path: '/paso/planes',
     exact: true,
-    component: ThankYouPage,
+    component: Plans,
     isProtect: false,
   },
   {

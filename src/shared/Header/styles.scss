@@ -1,0 +1,103 @@
+@import "styles/global/variables.scss";
+
+.header {
+  height: 64px;
+  background-color: $white;
+  border-bottom: 1px solid $gray5;
+
+  &__content {
+    height: 100%;
+    display: flex;
+    padding: 0 120px;
+    align-items: center;
+    justify-content: space-between;
+
+    .content__logo {
+      width: 99px;
+      height: 16px;
+    }
+
+    .content__right{
+      display: flex;
+      align-items: center;
+    }
+
+    .question {
+      color: $gray3;
+      font-size: 12px;
+      margin-right: 23px;
+    }
+
+    .phone {
+      display: flex;
+      font-size: 14px;
+      align-items: center;
+
+      & > a {
+        color: $acian1;
+      }
+
+      &__text {
+        display: none;
+      }
+
+      & > img {
+        width: 13px;
+        height: 16px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.header--absolute {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  border-bottom: none;
+}
+
+@media (max-width: $md) {
+  .header {
+    height: 56px;
+  
+    &__content {
+      padding: 0 32px;
+  
+      .content__logo {
+        width: 92px;
+        height: 16px;
+      }
+  
+      .content__right{
+        display: flex;
+        align-items: center;
+      }
+  
+      .question {
+        display: none;
+      }
+  
+      .phone {
+        display: flex;
+        font-size: 14px;
+        align-items: center;
+  
+        &__number {
+          display: none;
+        }
+
+        &__text {
+          display: block;
+        }
+  
+        & > img {
+          width: 15px;
+          height: 19px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

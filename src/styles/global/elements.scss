@@ -23,8 +23,7 @@ body {
   font-style: normal;
   line-height: 1.25;
   font-synthesis: none;
-  color: #4B4B4B;
-  background-color: #F6F6F6;
+  background-color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -129,4 +128,9 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.container {
+  margin: auto;
+  max-width: 1360px;
 }
