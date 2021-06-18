@@ -1,0 +1,40 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "no-console": "warn",
+    "linebreak-style": 0,
+    "react/no-array-index-key": ["off"],
+    "react/jsx-props-no-spreading": ["off"],
+    "import/no-extraneous-dependencies": ["off"],
+    "import/no-named-as-default": ["off"]
+  },
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "src"
+        ]
+      }
+    }
+  },
+  "ignorePatterns": ["build/**", "docs/**", "dist", "src/**/dist/**"]
+}
