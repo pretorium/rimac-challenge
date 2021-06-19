@@ -1,0 +1,51 @@
+@import "styles/global/variables.scss";
+
+.generalInput {
+  position: relative;
+  width: fit-content;
+
+  input {
+    min-width: 288px;
+    height: 56px;
+    padding: 22px 16px 10px;
+    border-radius: 4px;
+    color: $gray1;
+    font-size: 16px;
+    border: 1px solid $gray4;
+
+    &::placeholder {
+      color: $gray2;
+    }
+
+    &:focus {
+      border: 1px solid $gray2;
+    }
+  }
+
+  input[value=""] {
+    padding: 16px;
+  }
+
+  &__label {
+    top: 8px;
+    left: 16px;
+    color: $gray3;
+    font-size: 12px;
+    position: absolute;
+  }
+
+  &--error {
+    input {
+      color: $main;
+      border: 1px solid $main;
+  
+      &::placeholder {
+        color: $main;
+      }
+  
+      &:focus {
+        border: 1px solid $main;
+      }
+    }
+  }
+}

@@ -1,0 +1,183 @@
+@import "styles/global/variables.scss";
+
+.home {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1.9fr 3fr;
+
+  &__banner {
+    padding: 64px;
+    grid-column: 1 / 2;
+    background-color: $bg;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../../../assets/images/bg-park.svg');
+
+    .banner__image {
+      grid-column: span 12;
+      img {
+        margin-left: auto;
+        width: 320px;
+        height: 250px;
+      }
+    }
+
+    .banner__info {
+      grid-column: span 12;
+
+      .info {
+        margin-left: auto;
+        width: 320px;
+        padding-top: 21px;
+        margin-bottom: 99px;
+
+        h4 {
+          font-size: 12px;
+          color: $gray1;
+          padding-bottom: 4px;
+          font-family: Lato-Regular;
+        }
+
+        h1 {
+          color: $gray1;
+          font-size: 36px;
+          padding-bottom: 16px;
+          line-height: 48px;
+          font-family: Lato-Light;
+
+          span {
+            color: $main;
+          }
+        }
+
+        p {
+          font-size: 14px;
+          color: $gray2;
+          width: 90%;
+          line-height: 24px;
+          font-family: Roboto-Regular;
+        }
+
+        &__footer {
+          bottom: 55px;
+          color: $gray3;
+          position: absolute;
+          font-size: 12px;
+          font-family: Roboto-light;
+        }
+      }
+    }
+  }
+
+  &__auth {
+    grid-column: 2 / 3;
+    padding-top: 112px;
+
+    .authform {
+      width: 100%;
+
+      &__content {
+        margin: auto;
+        width: 50%;
+
+        h2 {
+          color: $gray1;
+          font-size: 28px;
+          font-family: Lato-Light;
+          margin-bottom: 24px;
+        }
+
+        .formControl__selectInput {
+          display: flex;
+
+          .generalSelect > input{
+            min-width: 0px;
+            width: 97px;
+            border-right-width: 0.25px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+          }
+
+          .generalInput > input{
+            min-width: 0px;
+            width: 191px;
+            border-left-width: 0.25px;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+          }
+        }
+
+        .formControl {
+          padding-bottom: 16px;
+        }
+
+      }
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .home {
+    grid-template-columns: repeat(12, 1fr);
+  
+    &__banner {
+      padding: 56px 32px;
+      grid-column: span 12;
+      background-image: none;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -8px;
+        width: 112px;
+        height: 276px;
+        background-repeat: no-repeat;
+        background-image: url('../../../assets/images/woman-car-small.svg');
+      }
+      
+      .banner__image {
+        display: none;
+      }
+
+      .banner__info {
+
+        .info {
+          width: 200px;
+          margin-left: 0;
+          margin-bottom: 0;
+
+          h4 {
+            font-size: 10px;
+            padding-bottom: 8px;
+          }
+  
+          h1 {
+            color: $gray1;
+            font-size: 28px;
+            padding-bottom: 16px;
+            line-height: 36px;
+            letter-spacing: -0.6px;
+          }
+  
+          p {
+            font-size: 14px;
+            color: $gray2;
+            width: 100%;
+            line-height: 24px;
+          }
+  
+          &__footer {
+            display: none;
+          }
+        }
+      }
+    }
+  
+    &__auth {
+      grid-column: span 12;
+    }
+  }
+}

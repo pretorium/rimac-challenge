@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import RouterOutlet from 'shared/RouterOutlet';
 import Header from 'shared/Header';
 import NotFound from 'shared/NotFound';
-import StepsComponent from 'shared/Steps';
+import StepsComponent from 'shared/StepCounter';
 import routes from './routes';
 
 import './styles.scss';

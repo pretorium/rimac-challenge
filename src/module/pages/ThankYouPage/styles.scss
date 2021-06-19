@@ -1,0 +1,142 @@
+@import "styles/global/variables.scss";
+
+.trankYouPage {
+  display: grid;
+  grid-template-columns: 1.3fr 3fr;
+
+  &__leftContent {
+    grid-column: 1 / 2;
+    min-height: 656px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-color: $gray7;
+    background-image: url('../../../assets/images/bg-livingroom.svg');
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: -22%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 192px;
+      height: 438px;
+      background-repeat: no-repeat;
+      background-image: url('../../../assets/images/people-livingroom.svg');
+    }
+  }
+
+  &__rightContent {
+    grid-column: 2 / 3;
+    padding-top: 96px;
+
+    .rightContent {
+      width: 50%;
+      margin: auto;
+
+      h1 {
+        font-size: 36px;
+        line-height: 48px;
+        letter-spacing: -0.2px;
+        color: $gray1;
+        font-weight: 400;
+        margin-bottom: 16px;
+
+        span {
+          color: $main
+        }
+      }
+
+      p {
+        margin-bottom: 40px;
+        font-family: Roboto-Regular;
+        line-height: 28px;
+        color: $gray2;
+        font-family: Roboto-Light;
+      }
+
+      button {
+        height: 56px;
+        width: 255px;
+      }
+    }
+  }
+}
+
+footer.generalFooter {
+  display: none;
+}
+
+@media (max-width: $md) {
+  .trankYouPage {
+    grid-template-columns: repeat(12, 1fr);
+  
+    &__leftContent {
+      grid-column: span 12;
+      min-height: 208px;
+      overflow: hidden;
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: $gray7;
+      background-image: url('../../../assets/images/bg-livingroom-two.svg');
+
+      &::after {
+        display: none;
+      }
+  
+      &::before {
+        content: '';
+        position: absolute;
+        right: 50%;
+        bottom: 0;
+        width: 144px;
+        height: 90%;
+        transform: translateX(50%);
+        background-repeat: no-repeat;
+        background-image: url('../../../assets/images/haft-man.svg');
+      }
+    }
+  
+    &__rightContent {
+      grid-column: span 12;
+      padding-top: 0;
+
+      .rightContent {
+        width: 100%;
+        padding: 45px 32px 56px;
+  
+        h1 {
+          font-size: 28px;
+          line-height: 36px;
+          letter-spacing: -0.6px;
+          color: $gray1;
+          font-weight: 400;
+          margin-bottom: 16px;
+  
+          span {
+            color: $main
+          }
+        }
+  
+        p {
+          margin-bottom: 40px;
+          font-family: Roboto-Regular;
+          line-height: 28px;
+          color: $gray2;
+          font-family: Roboto-Light;
+        }
+  
+        button {
+          width: 100%;
+          height: 56px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  footer.generalFooter {
+    display: flex;
+  }
+}

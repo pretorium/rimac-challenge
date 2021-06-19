@@ -1,0 +1,12 @@
+@import "styles/global/variables.scss";
+
+.generalButton {
+  min-width: 168px;
+  min-height: 44px;
+  background-color: $main;
+  border-radius: 6px;
+  color: $white;
+  padding: 0 21px;
+  font-family: Lato-Regular;
+  text-transform: uppercase;
+}

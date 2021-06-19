@@ -4,7 +4,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import BackButton from 'components/BackButton';
 import './styles.scss';
 
-function Steps(props) {
+function StepCounter(props) {
   const { steps } = props;
   const { pathname } = useLocation();
   const currentStep = steps.findIndex((step) => step.path === pathname) + 1;
@@ -35,18 +35,18 @@ function Steps(props) {
   );
 }
 
-Steps.propTypes = {
+StepCounter.propTypes = {
   steps: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
     path: PropTypes.string,
   })),
 };
 
-Steps.defaultProps = {
+StepCounter.defaultProps = {
   steps: [
     { name: 'Step 1', path: '/' },
     { name: 'Step 2', path: '/' },
   ],
 };
 
-export default Steps;
+export default StepCounter;

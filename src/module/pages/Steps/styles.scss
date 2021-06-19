@@ -2,15 +2,15 @@
 
 .layout {
   display: grid;
-  grid-template-columns: repeat(2, 408px 952px);
+  grid-template-columns: 1.3fr 3fr;
 
   &__stepCounter {
-    grid-column: span 1;
+    grid-column: 1 / 2;
     background-color: $gray7;
   }
 
   &__content {
-    grid-column: span 1;
+    grid-column: 2 / 3;
   }
 }
 
