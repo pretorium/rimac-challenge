@@ -1,0 +1,116 @@
+@import "styles/global/variables.scss";
+
+.stepsContainer {
+  padding: 48px 0;
+  display: flex;
+  justify-content: flex-end;
+
+  &__list {
+    width: fit-content;
+    position: relative;
+
+    .dashedLine {
+      height: 100%;
+      position: absolute;
+      left: 12px;
+      top: 0;
+      z-index: 1;
+      border: 1px dashed $gray5;
+    }
+
+    & div:last-child {
+      margin-bottom: 0;
+    }
+
+    .step {
+      z-index: 2;
+      width: 224px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 48px;
+      position: relative;
+
+      &__number {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        border-radius: 100%;
+        align-items: center;
+        margin-right: 16px;
+        justify-content: center;
+        border: 1px solid $gray4;
+        color: $gray4;
+        font-size: 12px;
+        background-color: $gray7;
+        transition: all .2s linear;
+      }
+
+      &__number--active {
+        color: $white;
+        background-color: $acian2;
+        border: 1px solid $acian2;
+      }
+
+      &__number--active ~ p  {
+        color: $gray1;
+        transition: all .2s linear;
+      }
+
+      &__name {
+        font-size: 16px;
+        color: $gray3;
+      }
+    }
+  }
+
+  &__bar {
+    display: none;
+    width: 100%;
+    align-items: center;
+
+    .currentStep {
+      font-size: 10px;
+      padding: 0 16px 0 12px;
+      font-family: 'Lato-Bold';
+      color: $gray2;
+      white-space: nowrap;
+    }
+
+    .progress {
+      height: 6px;
+      width: 100%;
+      overflow: hidden;
+      background-color: $gray5;
+      border-radius: 20px;
+      position: relative;
+
+      &__bar {
+        top: 0;
+        left: 0;
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        border-radius: 20px;
+        background-color: $acian2;
+        transition: width .5s linear;
+      }
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .stepsContainer {
+    padding: 12px 32px;
+    border-bottom: 1px solid $gray5;
+
+  
+    &__list {
+      display: none;
+    }
+
+    
+    &__bar {
+      display: flex;
+    }
+  }
+}

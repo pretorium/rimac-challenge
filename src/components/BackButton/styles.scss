@@ -1,0 +1,30 @@
+@import "styles/global/variables.scss";
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+
+  &__button {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background-color: $white;
+    border: 1px solid $main;
+
+    img {
+      height: 7.5px;
+      width: 4.5px;
+    }
+  }
+
+  &__button:disabled {
+    cursor: not-allowed;
+    border: 1px solid $gray6;
+  }
+
+  &__text {
+    margin-left: 16px;
+    font-size: 12px;
+    color: $gray3;
+  }
+}

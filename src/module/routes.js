@@ -14,14 +14,14 @@ const routes = [
   },
   {
     name: 'paso',
-    path: '/paso/datos-auto',
-    exact: true,
+    path: '/steps',
+    exact: false,
     component: Steps,
     isProtect: false,
   },
   {
     name: 'thank-you-page',
-    path: '/gracias',
+    path: '/thanks',
     exact: true,
     component: ThankYouPage,
     isProtect: false,
