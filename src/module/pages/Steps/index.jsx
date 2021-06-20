@@ -12,7 +12,7 @@ function Steps() {
   const stepList = routes.map(({ name, path }) => ({ name, path }));
 
   return (
-    <>
+    <div className="generalWrapper">
       <Header />
       <div className="layout container">
         <div className="layout__stepCounter">
@@ -27,7 +27,7 @@ function Steps() {
           </Switch>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

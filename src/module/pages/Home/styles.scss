@@ -74,6 +74,7 @@
   &__auth {
     grid-column: 2 / 3;
     padding-top: 112px;
+    background-color: $white;
 
     .authform {
       width: 100%;
@@ -149,6 +150,16 @@
         }
       }
     }
+  }
+
+  div#root {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50vw;
+    height: 100%;
+    background-color: $bg;
   }
 }
 

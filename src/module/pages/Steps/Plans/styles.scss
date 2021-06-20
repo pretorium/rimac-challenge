@@ -1,0 +1,51 @@
+@import "styles/global/variables.scss";
+
+.plansContainer {
+  padding: 48px 96px;
+
+  .buttonContainer {
+    padding-bottom: 24px;
+  }
+
+  .plansContainer__title {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.6px;
+    font-weight: 400;
+    color: $gray1;
+    font-family: Lato-Regular;
+    padding-bottom: 8px;
+  }
+
+  .plansContainer__subtitle {
+    color: $gray2;
+  }
+
+  .plansContainer__content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .contentLeft {
+
+    &__banner {
+      padding: 44px 0 64px;
+
+      .carCard {
+        width: 384px;
+        border-radius: 12px;
+        border: 3px solid $gray6;
+        padding: 40px 32px;
+        position: relative;
+
+        & > img {
+          position: absolute;
+          right: 42px;
+          bottom: 0;
+          width: 112px;
+          height: 196px;
+        }
+      }
+    }
+  }
+}

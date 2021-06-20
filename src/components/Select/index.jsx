@@ -12,6 +12,7 @@ function Select(props) {
     onSelect,
     selectLabel,
     hasError,
+    onBlur,
   } = props;
   const selectRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -58,6 +59,7 @@ function Select(props) {
             : ''
         }
         ref={selectRef}
+        onBlur={onBlur}
         className="generalSelect__select"
         placeholder={placeholder}
       />
@@ -105,6 +107,7 @@ Select.propTypes = {
   name: PropTypes.string,
   selectLabel: PropTypes.string,
   hasError: PropTypes.bool,
+  onBlur: PropTypes.func,
 };
 
 Select.defaultProps = {
@@ -119,6 +122,7 @@ Select.defaultProps = {
   onSelect: (op) => console.log(op),
   selectLabel: '',
   hasError: false,
+  onBlur: () => {},
 };
 
 export default Select;

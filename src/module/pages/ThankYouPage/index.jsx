@@ -9,7 +9,7 @@ function ThankYouPage() {
   const { push } = useHistory();
 
   return (
-    <>
+    <div className="generalWrapper">
       <Header />
       <div className="trankYouPage container">
         <div className="trankYouPage__leftContent" />
@@ -36,7 +36,7 @@ function ThankYouPage() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

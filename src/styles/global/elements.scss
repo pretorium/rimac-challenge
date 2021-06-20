@@ -130,6 +130,20 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.generalWrapper {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50vw;
+    height: 100%;
+    background-color: $bg;
+  }
+}
+
 .container {
   margin: auto;
   max-width: 1360px;
@@ -239,6 +253,47 @@ input[type=number] {
       background-position: center;
       background-repeat: no-repeat;
       background-image: url('../../assets/images/checkbox.svg');
+    }
+  }
+}
+
+.generalRadioButton {
+  width: 19px;
+  height: 19px;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  margin-right: 13px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 101%;
+    height: 101%;
+    transform: translate(-50%, -50%);
+    background-color: $white;
+    border-radius: 100%;
+    border: 1px solid $gray4;
+  }
+
+  &:checked {
+    &::before {
+      border-color: $green2;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 55%;
+      height: 55%;
+      transform: translate(-50%, -50%);
+      background-color: $green2;
+      border-radius: 100%;
+      border: 1px solid $gray4;
     }
   }
 }

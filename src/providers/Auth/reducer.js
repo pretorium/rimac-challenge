@@ -10,7 +10,6 @@ function AuthReducer(state, action) {
   switch (action.type) {
     case CUSTOMER_DATA:
       return {
-        ...state,
         customerData: {
           ...action.payload,
         },

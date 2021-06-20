@@ -17,7 +17,7 @@ const routes = [
     path: '/steps',
     exact: false,
     component: Steps,
-    isProtect: true,
+    isProtect: false,
   },
   {
     name: 'thank-you-page',

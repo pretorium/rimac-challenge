@@ -3,6 +3,8 @@
 .stepsContainer {
   padding: 48px 0;
   display: flex;
+  position: relative;
+  z-index: 1;
   justify-content: flex-end;
 
   &__list {
@@ -79,7 +81,6 @@
     .progress {
       height: 6px;
       width: 100%;
-      overflow: hidden;
       background-color: $gray5;
       border-radius: 20px;
       position: relative;
@@ -102,7 +103,7 @@
   .stepsContainer {
     padding: 12px 32px;
     border-bottom: 1px solid $gray5;
-
+    background-color: $white;
   
     &__list {
       display: none;

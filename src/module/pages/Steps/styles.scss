@@ -11,6 +11,8 @@
 
   &__content {
     grid-column: 2 / 3;
+    position: relative;
+    background-color: $white;
   }
 }
 
