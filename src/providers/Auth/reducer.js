@@ -1,13 +1,43 @@
-/* eslint-disable import/no-named-as-default-member */
-import ACTIONS from './actions';
+import {
+  CUSTOMER_DATA,
+  CAR_DATA,
+  PLAN_DATA,
+  VERIFIED,
+  CURRENT_STEP,
+} from './actions';
 
 function AuthReducer(state, action) {
   switch (action.type) {
-    case ACTIONS.AUTH_LOGIN:
-      return { ...state, ...action.payload };
-    case ACTIONS.AUTH_LOGOUT:
+    case CUSTOMER_DATA:
       return {
-        isLoggedIn: false,
+        ...state,
+        customerData: {
+          ...action.payload,
+        },
+      };
+    case CAR_DATA:
+      return {
+        ...state,
+        carData: {
+          ...action.payload,
+        },
+      };
+    case PLAN_DATA:
+      return {
+        ...state,
+        planData: {
+          ...action.payload,
+        },
+      };
+    case VERIFIED:
+      return {
+        ...state,
+        isVerified: action.payload,
+      };
+    case CURRENT_STEP:
+      return {
+        ...state,
+        currentStep: action.payload,
       };
     default:
       throw new Error();

@@ -11,7 +11,7 @@ const ListenerProvider = () => (Component) => (props) => {
 
   useEffect(() => {
     if (JSON.stringify(auth) !== JSON.stringify(getCookie('auth'))) {
-      setCookie('auth', JSON.stringify({ ...auth }), 14400000);
+      setCookie('auth', JSON.stringify({ ...auth }), 900000);
     }
   }, [auth]);
 

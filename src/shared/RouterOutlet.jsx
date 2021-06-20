@@ -33,7 +33,7 @@ const RouterOutlet = (route) => {
     render,
   };
 
-  if (isProtect && !auth.isLoggedIn) {
+  if (isProtect && !auth.isVerified) {
     return <Redirect to="/" />;
   }
 

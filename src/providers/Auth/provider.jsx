@@ -5,7 +5,7 @@ import AuthReducer from './reducer';
 
 export const InitialState = {
   ...(getCookie('auth') ? JSON.parse(getCookie('auth')) : {
-    isLoggedIn: false,
+    isVerified: false,
   }),
 };
 
