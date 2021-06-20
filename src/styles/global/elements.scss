@@ -16,6 +16,7 @@ input::-webkit-inner-spin-button {
 
 html,
 body {
+  min-height: 100vh;
   max-width: 100vw;
   font-family: Lato-Regular, sans-serif;
   font-size: 16px;
@@ -252,7 +253,7 @@ input[type=number] {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-image: url('../../assets/images/checkbox.svg');
+      background-image: url('/assets/images/checkbox.svg');
     }
   }
 }

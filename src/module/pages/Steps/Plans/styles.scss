@@ -24,6 +24,7 @@
   .plansContainer__content {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
+    grid-column-gap: 20px;
   }
 
   .contentLeft {
@@ -38,14 +39,127 @@
         padding: 40px 32px;
         position: relative;
 
+        &__plate {
+          font-size: 12px;
+          line-height: 20px;
+          letter-spacing: 0.2px;
+          color: $gray3;
+          font-family: Roboto-Light;
+        }
+
+        &__brand {
+          font-size: 20px;
+          line-height: 28px;
+          display: flex;
+          color: $gray1;
+          letter-spacing: 0.2px;
+          font-family: Lato-Light;
+        }
+
+        &__model {
+          font-size: 20px;
+          line-height: 28px;
+          display: flex;
+          color: $gray1;
+          font-family: Lato-Light;
+        }
+
+        a {
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.6px;
+          color: #6F7DFF;
+          font-family: Lato-Bold;
+        }
+
         & > img {
           position: absolute;
-          right: 42px;
+          right: 16px;
           bottom: 0;
           width: 112px;
           height: 196px;
+          object-fit: contain;
         }
       }
+    }
+  }
+
+  .contentRight {
+    
+    &__payment {
+      width: 224px;
+      margin: auto;
+
+      .payment {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 19px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid $gray5;
+
+        &__amount {
+          font-size: 28px;
+          line-height: 36px;
+          letter-spacing: -0.2px;
+          color: $gray1;
+          font-family: Lato-Light;
+          margin-bottom: 4px;
+        }
+
+        p {
+          font-size: 12px;
+          line-height: 20px;
+          text-align: center;
+          letter-spacing: 0.2px;
+          font-family: Roboto-Regular;
+          color: $gray2;
+        }
+      }
+
+      .paymentList {
+        padding-bottom: 32px;
+
+        &__title {
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0.2px;
+          color: $gray1;
+          font-family: Lato-Light;
+          margin-bottom: 12px;
+        }
+
+        &__item {
+          font-size: 14px;
+          line-height: 24px;
+          display: flex;
+          align-items: center;
+          color: #676F8F;
+
+          &::before {
+            content: '';
+            display: block;
+            height: 8px;
+            width: 10px;
+            margin-right: 20px;
+            background-size: contain;
+            background-image: url('/assets/images/check.svg');
+            background-repeat: no-repeat;
+          }
+        }
+      }
+
+      button.generalButton {
+        width: 204px;
+      }
+    }
+  }
+
+  &__coverages {
+    
+    .coveragesTitle {
+      font-size: 20px;
+      line-height: 28px;
+      color: $gray1;
     }
   }
 }

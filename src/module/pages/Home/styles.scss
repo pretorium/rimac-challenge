@@ -13,7 +13,7 @@
     grid-template-columns: repeat(12, 1fr);
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('../../../assets/images/bg-park.svg');
+    background-image: url('/assets/images/bg-park.svg');
 
     .banner__image {
       grid-column: span 12;
@@ -181,7 +181,7 @@
         width: 112px;
         height: 276px;
         background-repeat: no-repeat;
-        background-image: url('../../../assets/images/woman-car-small.svg');
+        background-image: url('/assets/images/woman-car-small.svg');
       }
       
       .banner__image {

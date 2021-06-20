@@ -6,7 +6,9 @@ import Providers from './providers';
 function App() {
   return (
     <Providers>
-      <Module />
+      {typeof document !== 'undefined' && (
+        <Module />
+      )}
     </Providers>
   );
 }

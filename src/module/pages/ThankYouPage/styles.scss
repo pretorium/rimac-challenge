@@ -12,7 +12,7 @@
     background-repeat: no-repeat;
     background-position: center right;
     background-color: $gray7;
-    background-image: url('../../../assets/images/bg-livingroom.svg');
+    background-image: url('/assets/images/bg-livingroom.svg');
 
     &::after {
       content: '';
@@ -23,7 +23,7 @@
       width: 192px;
       height: 438px;
       background-repeat: no-repeat;
-      background-image: url('../../../assets/images/people-livingroom.svg');
+      background-image: url('/assets/images/people-livingroom.svg');
     }
   }
 
@@ -82,7 +82,7 @@ footer.generalFooter {
       background-repeat: no-repeat;
       background-position: center;
       background-color: $gray7;
-      background-image: url('../../../assets/images/bg-livingroom-two.svg');
+      background-image: url('/assets/images/bg-livingroom-two.svg');
 
       &::after {
         display: none;
@@ -97,7 +97,7 @@ footer.generalFooter {
         height: 90%;
         transform: translateX(50%);
         background-repeat: no-repeat;
-        background-image: url('../../../assets/images/haft-man.svg');
+        background-image: url('/assets/images/haft-man.svg');
       }
     }
   
