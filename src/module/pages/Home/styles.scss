@@ -6,7 +6,7 @@
   grid-template-columns: 1.9fr 3fr;
 
   &__banner {
-    padding: 64px;
+    padding: 64px 64px 50px;
     grid-column: 1 / 2;
     background-color: $bg;
     display: grid;

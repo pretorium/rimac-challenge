@@ -10,6 +10,7 @@ import useFetch from 'services/useFetch';
 import PropTypes from 'prop-types';
 import { CUSTOMER_DATA, VERIFIED, CURRENT_STEP } from 'providers/Auth/actions';
 import { AuthDispatchContext, AuthDataContext } from 'providers/Auth/provider';
+import RegexpTypes from 'utils/mixed';
 import validate from './validation';
 
 function Home(props) {
@@ -28,7 +29,7 @@ function Home(props) {
 
   const handleForm = (e) => {
     const {
-      name, value, type, checked,
+      name, value, type, checked, dataset,
     } = e.target;
 
     if (type === 'checkbox') {
@@ -36,7 +37,7 @@ function Home(props) {
         ...form,
         [name]: checked,
       });
-    } else {
+    } else if (RegexpTypes[dataset.valuetype].test(value)) {
       setForm({
         ...form,
         [name]: value,
@@ -128,6 +129,7 @@ function Home(props) {
                     onChange={handleForm}
                     autoComplete="off"
                     onBlur={validateOnBlur}
+                    data-valuetype="document"
                     hasError={!!typeErrors.documentNumber}
                   />
                 </div>
@@ -145,6 +147,7 @@ function Home(props) {
                   onChange={handleForm}
                   autoComplete="off"
                   onBlur={validateOnBlur}
+                  data-valuetype="numeric"
                   hasError={!!typeErrors.phone}
                 />
                 {typeErrors.phone && (
@@ -155,12 +158,13 @@ function Home(props) {
                 <Input
                   type="text"
                   name="plate"
-                  value={form.plate}
+                  value={form.plate.toUpperCase()}
                   inputLabel="Placa"
                   placeholder="Placa"
                   onChange={handleForm}
                   autoComplete="off"
                   onBlur={validateOnBlur}
+                  data-valuetype="plate"
                   hasError={!!typeErrors.plate}
                 />
                 {typeErrors.plate && (

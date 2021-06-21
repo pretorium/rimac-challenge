@@ -1,12 +1,19 @@
 import * as yup from 'yup';
+import RegexpTypes from 'utils/mixed';
 
 export const validate = async (form) => {
   const schema = await yup.object().shape(
     {
       documentType: yup.string().required('Campo requerio'),
-      documentNumber: yup.string().required('Campo requerio'),
-      phone: yup.string().required('Campo requerio'),
-      plate: yup.string().required('Campo requerio'),
+      documentNumber: yup.string()
+        .min(8, 'Mínimo 8 dígitos')
+        .required('Número de documento requerio'),
+      phone: yup.string()
+        .matches(RegexpTypes.phoneNumber, 'Celular icorrecta')
+        .required('Celular requerio'),
+      plate: yup.string()
+        .min(6, 'Placa icorrecta')
+        .required('Placa requerida'),
     },
   );
 

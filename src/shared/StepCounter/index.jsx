@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import BackButton from 'components/BackButton';
 import './styles.scss';
 
 function StepCounter(props) {
   const { steps } = props;
   const { pathname } = useLocation();
+  const { push } = useHistory();
   const currentStep = steps.findIndex((step) => step.path === pathname) + 1;
+
+  const handleGoBack = () => {
+    push(currentStep === 1 ? '/' : steps[currentStep - 2].path);
+  };
 
   return (
     <div className="stepsContainer">
@@ -15,14 +20,14 @@ function StepCounter(props) {
         <div className="dashedLine" />
         {steps.map(({ name, path }, idx) => (
           <div key={name} className="step">
-            <NavLink className="step__number" activeClassName="step__number--active" to={path}>{idx + 1}</NavLink>
+            <div className={`step__number ${pathname === path ? 'step__number--active' : ''}`}>{idx + 1}</div>
             <p className="step__name">{name}</p>
           </div>
         ))}
       </div>
       <div className="stepsContainer__bar">
         <BackButton
-          disabled={pathname === steps[0].path}
+          onClick={handleGoBack}
         />
         <p className="currentStep">
           {`PASO ${currentStep} DE ${steps.length}`}
