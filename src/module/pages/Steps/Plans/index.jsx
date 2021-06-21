@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import BackButton from 'components/BackButton';
@@ -8,10 +8,49 @@ import { AuthDataContext } from 'providers/Auth/provider';
 import { carBrands } from 'utils/globals';
 import Shield from 'assets/images/shield.svg';
 import Button from 'components/Button';
+import Tabs from 'shared/Tabs';
+import FoldingCard from 'shared/FoldingCard';
+import fakeData from './tabData.json';
 
 function Plans(props) {
   const { history } = props;
+  const [tabData, setTabData] = useState([]);
   const { carData, customerData } = useContext(AuthDataContext);
+  const [selectPlans, setSelectPlans] = useState([]);
+  const [baseAmount, setBaseAmount] = useState(15);
+
+  const handleCoverageSelect = ({ id, amount }) => {
+    let nextSelectPlans = selectPlans;
+    if (nextSelectPlans.includes(id)) {
+      setBaseAmount(baseAmount - amount);
+      nextSelectPlans = nextSelectPlans.filter((ele) => ele !== id);
+    } else {
+      setBaseAmount(baseAmount + amount);
+      nextSelectPlans = [...nextSelectPlans, id];
+    }
+    setSelectPlans(nextSelectPlans);
+  };
+
+  const handleTabData = () => {
+    const nextData = fakeData.map((tab) => (
+      {
+        ...tab,
+        tabData: tab.tabData.map((data) => (
+          <FoldingCard
+            checked={selectPlans.includes(data.id)}
+            data={data}
+            onSelect={handleCoverageSelect}
+          />
+        )),
+      }
+    ));
+    setTabData(nextData);
+  };
+
+  useEffect(() => {
+    handleTabData();
+    return () => handleTabData();
+  }, [selectPlans]);
 
   return (
     <div className="plansContainer">
@@ -39,12 +78,18 @@ function Plans(props) {
               <img src={People} alt="people" />
             </div>
           </div>
+          <div className="contentLeft__coverages">
+            <h2 className="coveragesTitle">Agrega o quita coberturas</h2>
+            <Tabs
+              data={tabData}
+            />
+          </div>
         </div>
         <div className="contentRight">
           <div className="contentRight__payment">
             <div className="payment">
               <div>
-                <h2 className="payment__amount">$ 35.00</h2>
+                <h2 className="payment__amount">{`$ ${baseAmount.toFixed(2)}`}</h2>
                 <p>mensuales</p>
               </div>
               <img src={Shield} alt="shield" />
@@ -62,9 +107,6 @@ function Plans(props) {
             </Button>
           </div>
         </div>
-      </div>
-      <div className="plansContainer__coverages">
-        <h2 className="coveragesTitle">Agrega o quita coberturas</h2>
       </div>
     </div>
   );
