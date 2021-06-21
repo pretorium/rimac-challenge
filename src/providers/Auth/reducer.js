@@ -4,6 +4,7 @@ import {
   PLAN_DATA,
   VERIFIED,
   CURRENT_STEP,
+  RESET_DATA,
 } from './actions';
 
 function AuthReducer(state, action) {
@@ -37,6 +38,11 @@ function AuthReducer(state, action) {
       return {
         ...state,
         currentStep: action.payload,
+      };
+    case RESET_DATA:
+      return {
+        email: state.customerData.email,
+        isVerified: false,
       };
     default:
       throw new Error();

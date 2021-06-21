@@ -143,9 +143,3 @@ footer.generalFooter {
     display: flex;
   }
 }
-
-div.generalWrapper {
-  &::before {
-    background-color: $gray7;
-  }
-}

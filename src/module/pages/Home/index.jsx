@@ -86,7 +86,7 @@ function Home(props) {
   };
 
   return (
-    <div className="generalWrapper">
+    <div className="generalWrapper generalWrapper--gray8">
       <div className="home container">
         <Header absolute />
         <div className="home__banner">

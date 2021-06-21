@@ -9,7 +9,7 @@ function Header(props) {
 
   return (
     <header className={`header ${absolute && 'header--absolute'}`}>
-      <div className="header__content container">
+      <div className="header__content">
         <img className="content__logo" src={Logo} alt="logo" />
         <div className="content__right">
           <p className="question">¿Tienes alguna duda?</p>

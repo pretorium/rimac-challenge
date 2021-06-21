@@ -10,9 +10,10 @@
     grid-column: 1 / 2;
     background-color: $bg;
     display: grid;
+    align-content: flex-start;
     grid-template-columns: repeat(12, 1fr);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-image: url('/assets/images/bg-park.svg');
 
     .banner__image {
@@ -63,7 +64,6 @@
         &__footer {
           bottom: 55px;
           color: $gray3;
-          position: absolute;
           font-size: 12px;
           font-family: Roboto-light;
         }
@@ -150,16 +150,6 @@
         }
       }
     }
-  }
-
-  div#root {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 50vw;
-    height: 100%;
-    background-color: $bg;
   }
 }
 

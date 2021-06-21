@@ -7,6 +7,7 @@
   &__stepCounter {
     grid-column: 1 / 2;
     background-color: $gray7;
+    z-index: 1;
   }
 
   &__content {
@@ -14,6 +15,10 @@
     position: relative;
     background-color: $white;
   }
+}
+
+.layout.container {
+  min-height: calc(100vh - 64px);
 }
 
 @media (max-width: $md) {

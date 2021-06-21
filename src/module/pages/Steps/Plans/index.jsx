@@ -4,31 +4,44 @@ import PropTypes from 'prop-types';
 import BackButton from 'components/BackButton';
 import { Link } from 'react-router-dom';
 import People from 'assets/images/people.svg';
-import { AuthDataContext } from 'providers/Auth/provider';
+import { AuthDataContext, AuthDispatchContext } from 'providers/Auth/provider';
 import { carBrands } from 'utils/globals';
 import Shield from 'assets/images/shield.svg';
 import Button from 'components/Button';
 import Tabs from 'shared/Tabs';
 import FoldingCard from 'shared/FoldingCard';
+import { PLAN_DATA, RESET_DATA } from 'providers/Auth/actions';
 import fakeData from './tabData.json';
 
 function Plans(props) {
   const { history } = props;
   const [tabData, setTabData] = useState([]);
-  const { carData, customerData } = useContext(AuthDataContext);
-  const [selectPlans, setSelectPlans] = useState([]);
-  const [baseAmount, setBaseAmount] = useState(15);
+  const dispatchAuth = useContext(AuthDispatchContext);
+  const { carData, customerData, planData } = useContext(AuthDataContext);
+  const [selectPlans, setSelectPlans] = useState(
+    planData && planData.selectPlans ? planData.selectPlans : [],
+  );
+  const [baseAmount, setBaseAmount] = useState(
+    planData && planData.amount ? planData.amount : 15,
+  );
 
   const handleCoverageSelect = ({ id, amount }) => {
+    let nextAmount = baseAmount;
     let nextSelectPlans = selectPlans;
     if (nextSelectPlans.includes(id)) {
-      setBaseAmount(baseAmount - amount);
+      nextAmount -= amount;
+      setBaseAmount(nextAmount);
       nextSelectPlans = nextSelectPlans.filter((ele) => ele !== id);
     } else {
-      setBaseAmount(baseAmount + amount);
+      nextAmount += amount;
+      setBaseAmount(nextAmount);
       nextSelectPlans = [...nextSelectPlans, id];
     }
     setSelectPlans(nextSelectPlans);
+    dispatchAuth({
+      type: PLAN_DATA,
+      payload: { selectPlans: nextSelectPlans, amount: nextAmount },
+    });
   };
 
   const handleTabData = () => {
@@ -51,6 +64,13 @@ function Plans(props) {
     handleTabData();
     return () => handleTabData();
   }, [selectPlans]);
+
+  const handleOnSubmit = () => {
+    history.push('/thanks');
+    setTimeout(() => {
+      dispatchAuth({ type: RESET_DATA });
+    }, 200);
+  };
 
   return (
     <div className="plansContainer">
@@ -102,7 +122,10 @@ function Plans(props) {
                 <li className="paymentList__item">Analisis de motor</li>
               </ul>
             </div>
-            <Button>
+            <Button
+              type="button"
+              onClick={handleOnSubmit}
+            >
               Lo quiero
             </Button>
           </div>

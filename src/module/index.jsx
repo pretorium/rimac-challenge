@@ -5,13 +5,11 @@ import routes from './routes';
 
 function Module() {
   return (
-    <div>
-      <Switch>
-        {routes.map((route) => (
-          <RouterOutlet key={route.name} {...route} />
-        ))}
-      </Switch>
-    </div>
+    <Switch>
+      {routes.map((route) => (
+        <RouterOutlet key={route.name} {...route} />
+      ))}
+    </Switch>
   );
 }
 

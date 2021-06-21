@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Header from 'shared/Header';
 import './styles.scss';
 import Button from 'components/Button';
 import Footer from 'shared/Footer';
 import { useHistory } from 'react-router-dom';
+import { AuthDataContext } from 'providers/Auth/provider';
 
 function ThankYouPage() {
   const { push } = useHistory();
+  const { email } = useContext(AuthDataContext);
 
   return (
     <div className="generalWrapper">
@@ -24,7 +26,7 @@ function ThankYouPage() {
               Enviaremos la confirmación de compra de tu Plan Vehícular Tracking a tu correo:
               <br />
               <strong>
-                joel.sanchez@gmail.com
+                {email || ''}
               </strong>
             </p>
             <Button
