@@ -40,6 +40,7 @@ function Home(props) {
     } else if (name === 'documentType') {
       setForm({
         ...form,
+        documentNumber: '',
         [name]: value,
       });
     } else if (RegexpTypes[dataset.valuetype].test(value)) {

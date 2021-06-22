@@ -18,6 +18,7 @@ function CarData(props) {
   const [typeErrors, setTypeErrors] = useState({});
   const dispatchAuth = useContext(AuthDispatchContext);
   const { carData, customerData } = useContext(AuthDataContext);
+  const [isLoading, setIsLoading] = useState(false);
   const [form, setForm] = useState({
     year: carData ? carData.year : '',
     brand: carData ? carData.brand : '',
@@ -55,11 +56,22 @@ function CarData(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isLoading) return;
     const { isValid, errors } = await validate(form);
     if (!isValid) {
       setTypeErrors(errors);
       return;
     }
+
+    setIsLoading(true);
+    // Delay false for challenge
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        setIsLoading(false);
+        resolve();
+      }, 500);
+    });
+
     dispatchAuth({ type: CAR_DATA, payload: form });
     dispatchAuth({ type: CURRENT_STEP, payload: 1 });
     history.push('/steps/plans');
@@ -87,7 +99,7 @@ function CarData(props) {
                   name="year"
                   selectLabel="Año"
                   value={form.year}
-                  options={carYears}
+                  options={carYears.sort((a, b) => (b.value - a.value))}
                   onSelect={handleForm}
                   placeholder="Año"
                   hasError={!!typeErrors.year}
@@ -102,7 +114,7 @@ function CarData(props) {
                   name="brand"
                   selectLabel="Marca"
                   value={form.brand}
-                  options={carBrands}
+                  options={carBrands.sort()}
                   onSelect={handleForm}
                   placeholder="Marca"
                   hasError={!!typeErrors.brand}
@@ -181,6 +193,7 @@ function CarData(props) {
           </div>
           <Button
             type="submit"
+            isLoading={isLoading}
           >
             <p>CONTINUAR</p>
             <img src={ArrowRight} alt=">" />

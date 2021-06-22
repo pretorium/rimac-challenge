@@ -18,6 +18,7 @@ function Plans(props) {
   const [tabData, setTabData] = useState([]);
   const dispatchAuth = useContext(AuthDispatchContext);
   const { carData, customerData, planData } = useContext(AuthDataContext);
+  const [isLoading, setIsLoading] = useState(false);
   const [selectPlans, setSelectPlans] = useState(
     planData && planData.selectPlans ? planData.selectPlans : [],
   );
@@ -65,7 +66,16 @@ function Plans(props) {
     return () => handleTabData();
   }, [selectPlans]);
 
-  const handleOnSubmit = () => {
+  const handleOnSubmit = async () => {
+    setIsLoading(true);
+    // Delay false for challenge
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        setIsLoading(false);
+        resolve();
+      }, 500);
+    });
+
     history.push('/thanks');
     setTimeout(() => {
       dispatchAuth({ type: RESET_DATA });
@@ -124,6 +134,7 @@ function Plans(props) {
             </div>
             <Button
               type="button"
+              isLoading={isLoading}
               onClick={handleOnSubmit}
             >
               Lo quiero

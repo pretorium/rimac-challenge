@@ -3,8 +3,8 @@ import * as yup from 'yup';
 export const validate = async (form) => {
   const schema = await yup.object().shape(
     {
-      year: yup.string().required('Campo requerio'),
-      brand: yup.string().required('Campo requerio'),
+      year: yup.string().required('Año requerido'),
+      brand: yup.string().required('Marca requerida'),
     },
   );
 

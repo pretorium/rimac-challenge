@@ -45,8 +45,8 @@ const useFetch = ({ uri = '', method = 'get' }) => {
     await new Promise((resolve) => {
       setTimeout(() => {
         setLoading(false);
-        resolve(true);
-      }, 1000);
+        resolve();
+      }, 500);
     });
 
     if (response) {
