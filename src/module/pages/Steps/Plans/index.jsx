@@ -11,7 +11,7 @@ import Button from 'components/Button';
 import Tabs from 'shared/Tabs';
 import FoldingCard from 'shared/FoldingCard';
 import { PLAN_DATA, RESET_DATA } from 'providers/Auth/actions';
-import fakeData from './tabData.json';
+import tabConfig from './tabConfig';
 
 function Plans(props) {
   const { history } = props;
@@ -45,7 +45,7 @@ function Plans(props) {
   };
 
   const handleTabData = () => {
-    const nextData = fakeData.map((tab) => (
+    const nextData = tabConfig.map((tab) => (
       {
         ...tab,
         tabData: tab.tabData.map((data) => (

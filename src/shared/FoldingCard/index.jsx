@@ -11,6 +11,7 @@ function FoldingCard(props) {
       title,
       content,
       id,
+      image,
     },
     checked,
     onSelect,
@@ -21,7 +22,7 @@ function FoldingCard(props) {
     <div id={`foldingCard-${id}`} className="cardComponent">
       <div className="cardComponent__content">
         <div className="contentImg">
-          <img src="/run-over.svg" alt="tab-img" />
+          <img src={image} alt="tab-img" />
         </div>
         <div className="content">
           <div className="content__title">
@@ -68,6 +69,7 @@ FoldingCard.propTypes = {
     title: PropTypes.string,
     content: PropTypes.string,
     id: PropTypes.number,
+    image: PropTypes.string,
   }),
   checked: PropTypes.bool,
   onSelect: PropTypes.func,
@@ -78,6 +80,7 @@ FoldingCard.defaultProps = {
     title: 'Card Title',
     content: 'Card Content',
     id: 1,
+    image: PropTypes.string,
   }),
   checked: false,
   onSelect: () => {},

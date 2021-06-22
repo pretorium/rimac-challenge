@@ -10,7 +10,7 @@
     z-index: 2;
     position: relative;
     background-repeat: no-repeat;
-    background-position: center right;
+    background-position: right 136px;
     background-color: $gray7;
     background-image: url('/assets/images/bg-livingroom.svg');
 
@@ -18,8 +18,7 @@
       content: '';
       position: absolute;
       right: -22%;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 106px;
       width: 192px;
       height: 438px;
       background-repeat: no-repeat;
@@ -68,6 +67,10 @@
 
 footer.generalFooter {
   display: none;
+}
+
+.trankYouPage.container {
+  min-height: calc(100vh - 64px);
 }
 
 @media (max-width: $md) {
