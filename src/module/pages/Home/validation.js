@@ -10,10 +10,10 @@ export const validate = async (form) => {
         .required('Número de documento requerio'),
       phone: yup.string()
         .matches(RegexpTypes.phoneNumber, 'Celular incorrecto')
-        .min(9, 'Celular incorrecto')
+        .min(9, 'Mínimo 9 dígitos')
         .required('Celular requerio'),
       plate: yup.string()
-        .min(6, 'Placa incorrecta')
+        .min(6, 'Mínimo 6 dígitos')
         .required('Placa requerida'),
     },
   );

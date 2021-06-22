@@ -16,6 +16,23 @@ $red3: #FC606B;
 $green2: #43B748;
 
 $sm: 600px;
-$md: 960px;
-$lg: 1280px;
-$xl: 1920px;
+$md: 1024px;
+$lg: 1440px;
+
+@mixin Mobile {
+  @media only screen and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin Desktop {
+  @media only screen and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin DesktopLarge {
+  @media only screen and (min-width: $lg) {
+    @content;
+  }
+}

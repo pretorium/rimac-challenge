@@ -146,6 +146,7 @@ function Home(props) {
                 <Input
                   type="text"
                   name="phone"
+                  maxLength="9"
                   value={form.phone}
                   inputLabel="Celular"
                   placeholder="Celular"
