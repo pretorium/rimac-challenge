@@ -168,10 +168,132 @@
       }
     }
   }
-}
 
-@media (max-width: $md) {
-  .plansContainer {
+  @include Large {
+    padding: 56.16px 112.32px;
+
+    .buttonContainer {
+      padding-bottom: 28.08px;
+    }
+  
+    .plansContainer__title {
+      font-size: 46.8px;
+      line-height: 56.16px;
+      letter-spacing: -0.702px;
+      font-weight: 400;
+      padding-bottom: 9.36px;
+    }
+  
+    .plansContainer__content {
+      grid-column-gap: 23.4px;
+    }
+  
+    .contentLeft {
+      &__banner {
+        padding: 51.48px 0 44px;
+  
+        .carCard {
+          width: 449.28px;
+          border-radius: 14.04px;
+          border: 3.51px solid $gray6;
+          padding: 46.8px 42.12px;
+  
+          &__plate {
+            font-size: 14.04px;
+            line-height: 23.4px;
+            letter-spacing: 0.234px;
+          }
+  
+          &__brand {
+            font-size: 23.4px;
+            line-height: 32.76px;
+            letter-spacing: 0.234px;
+          }
+  
+          &__model {
+            font-size: 23.4px;
+            line-height: 32.76px;
+          }
+  
+          a {
+            font-size: 14.04px;
+            line-height: 18.72px;
+            letter-spacing: 0.702px;
+          }
+  
+          & > img {
+            right: 18.72px;
+            width: 131.04px;
+            height: 229.32px;
+          }
+        }
+      }
+  
+      &__coverages {
+      
+        .coveragesTitle {
+          font-size: 23.4px;
+          line-height: 32.76px;
+          margin-bottom: 37.44px;
+        }
+      }
+    }
+  
+    .contentRight {
+      &__payment {
+        width: 262.08px;
+        top: 56.16px;
+  
+        .payment {
+          padding-bottom: 22.23px;
+          margin-bottom: 28.08px;
+          border-bottom: 1.17px solid $gray5;
+  
+          &__amount {
+            font-size: 32.76px;
+            line-height: 42.12px;
+            letter-spacing: -0.234px;
+            margin-bottom: 4.68px;
+          }
+  
+          p {
+            font-size: 14.04px;
+            line-height: 23.4px;
+            letter-spacing: 0.234px;
+          }
+        }
+  
+        .paymentList {
+          padding-bottom: 37.44px;
+  
+          &__title {
+            font-size: 18.72px;
+            line-height: 28.08px;
+            letter-spacing: 0.234px;
+            margin-bottom: 14.04px;
+          }
+  
+          &__item {
+            font-size: 16.38px;
+            line-height: 28.08px;
+  
+            &::before {
+              height: 9.36px;
+              width: 11.7px;
+              margin-right: 23.4px;
+            }
+          }
+        }
+  
+        button.generalButton {
+          width: 238.68px;
+          height: 56.16px;
+        }
+      }
+    }
+  }
+
+  @include Small {
     padding: 0;
   
     .buttonContainer {

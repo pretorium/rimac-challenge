@@ -54,4 +54,26 @@
       width: 100%;
     }
   }
+
+  @include Large {
+    &__container {
+      border-bottom: 1.17px solid $gray5;
+  
+      .tab {
+        height: 65.52px;
+        font-size: 11.7px;
+        line-height: 18.72px;
+        letter-spacing: 0.936px;
+        padding: 0 11.7px;
+  
+        &--active {
+          border-bottom: 2.34px solid $main;
+        }
+  
+        &:hover {
+          border-bottom: 2.34px solid $main;
+        }
+      }
+    }
+  }
 }

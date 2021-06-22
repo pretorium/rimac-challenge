@@ -155,7 +155,11 @@ input[type=number] {
 .container {
   margin: auto;
   min-height: 100vh;
-  max-width: 1360px;
+  max-width: $md-container;
+
+  @include Large {
+    max-width: $lg-container;
+  }
 }
 
 .loader {
@@ -262,6 +266,16 @@ input[type=number] {
       background-position: center;
       background-repeat: no-repeat;
       background-image: url('/assets/images/checkbox.svg');
+    }
+  }
+
+  @include Large {
+    width: 22.23px;
+    height: 22.23px;
+  
+    &::before {
+      border-radius: 4.68px;
+      border: 1.17px solid $gray4;
     }
   }
 }

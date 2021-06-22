@@ -96,5 +96,67 @@
       transform: rotate(-180deg);
     }
   }
+
+  @include Large {
+    input {
+      min-width: 336.96px;
+      height: 65.52px;
+      padding: 25.74px 18.72px 11.7px;
+      border-radius: 4.68px;
+      font-size: 18.72px;
+      border: 1.17px solid $gray4;
+
+      &:focus {
+        border: 1.17px solid $gray2;
+      }
+    }
+  
+    input[value=""] {
+      padding: 18.72px;
+    }
+  
+    &__label {
+      top: 9.36px;
+      left: 18.72px;
+      font-size: 14.04px;
+    }
+  
+    .generalSelect__list {
+      margin-top: 5.85px;
+      max-height: 234px;
+      border-radius: 4.68px;
+      border: 1px solid $gray4;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2.34px 9.36px 0px;
+  
+      .option {
+        width: 100%;
+        padding: 18.72px;
+        font-size: 18.72px;
+        font-size: 18.72px;
+      }
+    }
+  
+    &--error {
+      input {
+        border: 1.17px solid $main;
+
+        &:focus {
+          border: 1.17px solid $main;
+        }
+      }
+    }
+  
+    &--noLabel {
+      input {
+        padding: 18.72px;
+      }
+    }
+  
+    &__arrow {
+      right: 18.72px;
+      width: 11.7px;
+      height: 7.02px;
+    }
+  }
 }
 

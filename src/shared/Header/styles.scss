@@ -52,19 +52,37 @@
       }
     }
   }
-}
 
-.header--absolute {
-  z-index: 1;
-  position: absolute;
-  left: 0;
-  right: 0;
-  background-color: transparent;
-  border-bottom: none;
-}
+  @include Large {
+    height: 74.88px;
 
-@media (max-width: $md) {
-  .header {
+    &__content {
+      padding: 0 140.4px;
+      max-width: $lg;
+
+      .content__logo {
+        width: 115.83px;
+        height: 18.72px;
+      }
+
+      .question {
+        font-size: 14.04px;
+        margin-right: 26.91px;
+      }
+
+      .phone {
+        font-size: 16.38px;
+
+        & > img {
+          width: 15.21px;
+          height: 17.7957px;
+          margin-right: 5.85px;
+        }
+      }
+    }
+  }
+
+  @include Small {
     height: 56px;
   
     &__content {
@@ -105,4 +123,13 @@
       }
     }
   }
+}
+
+.header--absolute {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  border-bottom: none;
 }

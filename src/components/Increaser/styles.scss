@@ -31,4 +31,20 @@
       background-color: $gray5;
     }
   }
+
+  @include Large {
+    min-width: 187.2px;
+    height: 65.52px;
+    border: 1.17px solid $gray5;
+    border-radius: 9.36px;
+    padding: 22.23px;
+    font-size: 18.72px;
+    line-height: 28.08px;
+    letter-spacing: 0.234px;
+  
+    button {
+      width: 18.72px;
+      height: 18.72px;
+    }
+  }
 }

@@ -100,10 +100,40 @@
       }
     }
   }
-}
 
-@media (max-width: $md) {
-  .stepsContainer {
+  @include Large {
+    padding: 56.16px 0;
+  
+    &__list {
+      .dashedLine {
+        left: 14.04px;
+        border: 1.17px dashed $gray5;
+      }
+
+      .step {
+        width: 262.08px;
+        margin-bottom: 56.16px;
+  
+        &__number {
+          width: 28.08px;
+          height: 28.08px;
+          margin-right: 18.72px;
+          border: 1.17px solid $gray4;
+          font-size: 14.04px;
+        }
+  
+        &__number--active {
+          border: 1.17px solid $acian2;
+        }
+    
+        &__name {
+          font-size: 18.72px;
+        }
+      }
+    }
+  }
+
+  @include Small {
     padding: 12px 32px;
     border-bottom: 1px solid $gray5;
     background-color: $white;

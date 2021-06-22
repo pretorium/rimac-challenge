@@ -48,4 +48,38 @@
       }
     }
   }
+
+  @include Large {
+    input {
+      min-width: 336.96px;
+      height: 65.52px;
+      padding: 25.74px 18.72px 11.7px;
+      border-radius: 4.68px;
+      font-size: 18.72px;
+
+      &:focus {
+        border: 1.17px solid $gray2;
+      }
+    }
+
+    input[value=""] {
+      padding: 18.72px;
+    }
+
+    &__label {
+      top: 9.36px;
+      left: 18.72px;
+      font-size: 14.04px;
+    }
+
+    &--error {
+      input {
+        border: 1.17px solid $main;
+    
+        &:focus {
+          border: 1.17px solid $main;
+        }
+      }
+    }
+  }
 }

@@ -27,4 +27,26 @@
     font-size: 12px;
     color: $gray3;
   }
+
+  @include Large {
+    &__button {
+      width: 28.08px;
+      height: 28.08px;
+      border: 1.17px solid $main;
+  
+      img {
+        height: 8.775px;
+        width: 5.265px;
+      }
+    }
+  
+    &__button:disabled {
+      border: 1.17px solid $gray6;
+    }
+  
+    &__text {
+      margin-left: 18.72px;
+      font-size: 14.04px;
+    }
+  }
 }

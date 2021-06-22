@@ -63,18 +63,55 @@
       }
     }
   }
-}
 
-footer.generalFooter {
-  display: none;
-}
+  &.container {
+    min-height: calc(100vh - 64px);
+  }
 
-.trankYouPage.container {
-  min-height: calc(100vh - 64px);
-}
+  @include Large {
+    &__leftContent {
+      min-height: 767.52px;
+      background-position: right 159.12px;
+  
+      &::after {
+        top: 124.02px;
+        width: 224.64px;
+        height: 512.46px;
+      }
+    }
+  
+    &__rightContent {
+      padding-top: 112.32px;
+  
+      .rightContent {
+        width: 50%;
+  
+        h1 {
+          font-size: 42.12px;
+          line-height: 56.16px;
+          letter-spacing: -0.234px;
+          margin-bottom: 18.72px;
+        }
+  
+        p {
+          margin-bottom: 46.8px;
+          line-height: 32.76px;
+        }
+  
+        button {
+          height: 65.52px;
+          width: 298.35px;
+        }
+      }
+    }
+  
+    &.container {
+      min-height: calc(100vh - 74.88px);
+    }
+  }
 
-@media (max-width: $md) {
-  .trankYouPage {
+  @include Small {
+    align-content: flex-start;
     grid-template-columns: repeat(12, 1fr);
   
     &__leftContent {
@@ -85,6 +122,7 @@ footer.generalFooter {
       background-repeat: no-repeat;
       background-position: center;
       background-color: $gray7;
+      background-size: cover;
       background-image: url('/assets/images/bg-livingroom-two.svg');
 
       &::after {
@@ -97,9 +135,10 @@ footer.generalFooter {
         right: 50%;
         bottom: 0;
         width: 144px;
-        height: 90%;
+        height: 100%;
         transform: translateX(50%);
         background-repeat: no-repeat;
+        background-position: bottom;
         background-image: url('/assets/images/haft-man.svg');
       }
     }
@@ -140,9 +179,19 @@ footer.generalFooter {
         }
       }
     }
-  }
 
-  footer.generalFooter {
+    &.container {
+      position: relative;
+      background-color: $white;
+      min-height: calc(100vh - 91px);
+    }
+  }
+}
+
+footer.generalFooter {
+  display: none;
+
+  @include Small {
     display: flex;
   }
 }

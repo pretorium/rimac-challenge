@@ -111,10 +111,72 @@
       }
     }
   }
-}
 
-@media (max-width: $md) {
-  .cardComponent {
+  @include Large {
+    border-bottom: 1.17px solid $gray5;
+    padding: 37.44px 0 18.72px;
+  
+    &__content {
+      .contentImg {
+        width: 56.16px;
+        height: 56.16px;
+      }
+  
+      .content {
+        padding-left: 28.08px;
+  
+        &__title {
+          h2 {
+            font-size: 23.4px;
+            line-height: 32.76px;
+            margin-bottom: 14.04px;
+          }
+        }
+  
+        &__action {
+          p {
+            font-size: 14.04px;
+            line-height: 18.72px;
+            letter-spacing: 0.702px;
+            padding-left: 14.04px;
+          }
+  
+          button {
+            width: 28.08px;
+            height: 28.08px;
+            border: 1.17px solid $acian1;
+        
+            img {
+              width: 11.7px;
+              height: 11.7px;
+            }
+          }
+        }
+  
+        &__body {
+          padding-top: 18.72px;
+          p {
+            font-size: 16.38px;
+            line-height: 28.08px;
+          }
+  
+          &--show {
+            padding-bottom: 18.72px;
+          }
+        }
+  
+        &__showMore {
+          top: 16.38px;
+          img {
+            width: 14.625px;
+            height: 8.775;
+          }
+        }
+      }
+    }
+  }
+
+  @include Small {
     &__content {
       padding: 0 32px;
 

@@ -15,24 +15,21 @@ $white: #FFFFFF;
 $red3: #FC606B;
 $green2: #43B748;
 
-$sm: 600px;
-$md: 1024px;
-$lg: 1440px;
+$sm: 992px;
+$md: 1360px;
+$lg: 1600px;
 
-@mixin Mobile {
-  @media only screen and (min-width: $sm) {
+$md-container: 1360px;
+$lg-container: 1600px;
+
+@mixin Small {
+  @media (max-width: $sm) {
     @content;
   }
 }
 
-@mixin Desktop {
-  @media only screen and (min-width: $md) {
-    @content;
-  }
-}
-
-@mixin DesktopLarge {
-  @media only screen and (min-width: $lg) {
+@mixin Large {
+  @media (min-width: $lg) {
     @content;
   }
 }

@@ -173,16 +173,130 @@
     display: flex;
     justify-content: space-evenly;
   }
-}
 
-footer.generalFooter {
-  display: none;
-}
+  @include Large {
+    padding: 56.16px 56.16px 56.16px 112.32px;
 
-// MEDIA QUERIES
+    .buttonContainer {
+      padding-bottom: 28.08px;
+    }
+  
+    .cardData__title {
+      font-size: 46.8px;
+      line-height: 56.16px;
+      letter-spacing: -0.702px;
+      padding-bottom: 9.36px;
+    }
+  
+    .cardData__subtitle {
+      margin-bottom: 37.44px;
+    }
+  
+    .formContainer {
+      &__control {
+        padding-bottom: 46.8px;
+      }
+    }
+  
+    .control__yearSelector {
+      padding-bottom: 21.06px;
+  
+      .generalSelect input {
+        width: 449.28px;
+      }
+  
+      .formControl__error {
+        font-size: 14.04px;
+        bottom: 2.34px;
+      }
+    }
+  
+    .control__brandSelector {
+      .generalSelect input {
+        width: 449.28px;
+      }
+  
+      .formControl__error {
+        font-size: 14.04px;
+        bottom: -18.72px;
+      }
+    }
+  
+    .control__oilOrGasSelector {
+      width: 449.28px;
+      padding-bottom: 46.8px;
+      border-bottom: 1.17px solid $gray5;
+  
+      p {
+        font-size: 18.72px;
+        letter-spacing: 0.234px;
+        line-height: 28.08px;
+      }
+  
+      label {
+        font-size: 18.72px;
+        margin-left: 37.44px;
+        line-height: 28.08px;
+        letter-spacing: 0.234px;
+      }
+    }
+  
+    .control__amountIndicator {
+      width: 449.28px;
+  
+      .amountIndicator__title {
+        font-size: 18.72px;
+        line-height: 28.08px;
+        letter-spacing: 0.234px;
+      }
+  
+      .amountIndicator__subtitle {
+        font-size: 14.04px;
+        line-height: 18.72px;
+        letter-spacing: 0.702px;
+      }
+    }
+  
+    .helpCard {
+      width: 262.08px;
+  
+      &__header {
+        font-size: 14.04px;
+        line-height: 18.72px;
+        letter-spacing: 0.702px;
+        padding-bottom: 18.72px;
+        border-bottom: 1.17px solid $gray5;
+        margin-bottom: 18.72px;
+      }
+  
+      &__body {
+        p {
+          font-size: 18.72px;
+          line-height: 28.08px;
+          letter-spacing: 0.234px;
+        }
+  
+        img {
+          width: 74.88px;
+          height: 74.88px;
+        }
+      }
+  
+      a { 
+        font-size: 11.7px;
+        line-height: 18.72px;
+        letter-spacing: 0.936px;
+        padding-top: 18.72px;
+      }
+    }
+  
+    button.generalButton {
+      width: 224.64px;
+      height: 65.52px;
+    }
+  }
 
-@media (max-width: $md) {
-  .cardData {
+  @include Small {
     padding: 40px 32px;
   
     .buttonContainer {
@@ -317,8 +431,12 @@ footer.generalFooter {
       }
     }
   }
+}
 
-  footer.generalFooter {
+footer.generalFooter {
+  display: none;
+
+  @include Small {
     display: flex;
   }
 }

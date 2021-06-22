@@ -13,7 +13,7 @@
     align-content: flex-start;
     grid-template-columns: repeat(12, 1fr);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100% auto;
     background-image: url('/assets/images/bg-park.svg');
 
     .banner__image {
@@ -151,10 +151,108 @@
       }
     }
   }
-}
 
-@media (max-width: $md) {
-  .home {
+  @include Large {  
+    &__banner {
+      padding: 74.88px 74.88px 58.5px;
+  
+      .banner__image {
+        img {
+          width: 374.4px;
+          height: 292.5px;
+        }
+      }
+  
+      .banner__info {
+        .info {
+          width: 374.4px;
+          padding-top: 24.57px;
+          margin-bottom: 115.83px;
+  
+          h4 {
+            font-size: 14.04px;
+            padding-bottom: 4.68px;
+          }
+  
+          h1 {
+            font-size: 42.12px;
+            padding-bottom: 18.72px;
+            line-height: 56.16px;
+  
+            span {
+              color: $main;
+            }
+          }
+  
+          p {
+            font-size: 16.38px;
+            line-height: 28.08px;
+          }
+  
+          &__footer {
+            bottom: 64.35px;
+            font-size: 14.04px;
+          }
+        }
+      }
+    }
+  
+    &__auth {
+      padding-top: 131.04px;
+      
+      .authform {
+        &__content {
+  
+          h2 {
+            font-size: 32.76px;
+            margin-bottom: 28.08px;
+          }
+  
+          .formControl {
+            padding-bottom: 21.06px;
+  
+            &__selectInput {
+    
+              .generalSelect > input{
+                width: 113.49px;
+                border-right-width: 0.2925px;
+              }
+    
+              .generalInput > input{
+                width: 223.47px;
+                border-left-width: 0.2925px;
+              }
+            }
+  
+            &__checkbox {
+              display: flex;
+  
+              .termsAndConditions {
+                font-size: 14.04px;
+                width: 297.18px;
+                padding-left: 14.04px;
+                line-height: 23.4px;
+              }
+            }
+  
+            &__error {
+              font-size: 14.04px;
+              bottom: 2.34px;
+            }
+          }
+  
+          .generalButton {
+            height: 65.52px;
+            width: 224.64px;
+            font-size: 16.38px;
+            margin-top: 28.08px;
+          }
+        }
+      }
+    }
+  }
+
+  @include Small {
     grid-template-columns: repeat(12, 1fr);
   
     &__banner {
