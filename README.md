@@ -1,4 +1,4 @@
-# RIMAC HACKING CHELLENGE
+# RIMAC HACKING CHALLENGE
 
   &ensp;&ensp;Esta aplicación esta realizada mediante la librería de ReactJs, haciendo uso del ambiente de npx create-react-app para lograr todos los objetivos en el tiempo proporcionado, cuenta con pocas dependencias más que las necesarias para su desarrollo. Se utilizó el preprocesador de Sass para manejar los estilos, para la validación de campos se implementó Yup y el manejo del global storage se hizo mediante Context API; además, se configuró EsLint con varias extensiones tomando en consideración las recomendadas por Airbnb para tener un código limpio y organizado.
 
