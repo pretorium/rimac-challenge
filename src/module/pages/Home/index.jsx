@@ -10,7 +10,7 @@ import useFetch from 'services/useFetch';
 import PropTypes from 'prop-types';
 import { CUSTOMER_DATA, VERIFIED, CURRENT_STEP } from 'providers/Auth/actions';
 import { AuthDispatchContext, AuthDataContext } from 'providers/Auth/provider';
-import RegexpTypes from 'utils/mixed';
+import RegexpTypes, { getMaskedPlate } from 'utils/mixed';
 import validate from './validation';
 
 function Home(props) {
@@ -46,7 +46,7 @@ function Home(props) {
     } else if (RegexpTypes[dataset.valuetype].test(value)) {
       setForm({
         ...form,
-        [name]: value,
+        [name]: name === 'plate' ? getMaskedPlate(value) : value,
       });
     }
 
@@ -135,7 +135,7 @@ function Home(props) {
                     onChange={handleForm}
                     autoComplete="off"
                     onBlur={validateOnBlur}
-                    data-valuetype="document"
+                    data-valuetype={form.documentType === 1 ? 'documentDni' : 'documentCe'}
                     hasError={!!typeErrors.documentNumber}
                   />
                 </div>
@@ -165,7 +165,7 @@ function Home(props) {
                 <Input
                   type="text"
                   name="plate"
-                  value={form.plate.toUpperCase()}
+                  value={form.plate}
                   inputLabel="Placa"
                   placeholder="Placa"
                   onChange={handleForm}

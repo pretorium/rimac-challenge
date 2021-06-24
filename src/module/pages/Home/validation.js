@@ -13,6 +13,7 @@ export const validate = async (form) => {
         .min(9, 'Mínimo 9 dígitos')
         .required('Celular requerio'),
       plate: yup.string()
+        .matches(RegexpTypes.plateFormat, 'Placa incorrecta')
         .min(6, 'Mínimo 6 dígitos')
         .required('Placa requerida'),
     },

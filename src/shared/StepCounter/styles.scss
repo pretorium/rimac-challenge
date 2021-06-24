@@ -6,7 +6,7 @@
   position: relative;
   z-index: 100;
   position: sticky;
-  top: 0;
+  top: 63px;
   justify-content: flex-end;
 
   &__list {
@@ -103,6 +103,7 @@
 
   @include Large {
     padding: 56.16px 0;
+    top: 73.88px;
   
     &__list {
       .dashedLine {
