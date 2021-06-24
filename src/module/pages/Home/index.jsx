@@ -79,7 +79,7 @@ function Home(props) {
     const { documentNumber } = form;
 
     const config = {
-      uri: `/api/users/${documentNumber.slice(-1)}`,
+      uri: `/api/users/${Number(documentNumber.slice(-1)) || 10}`,
     };
 
     const response = await fetchSubmit({}, config);
